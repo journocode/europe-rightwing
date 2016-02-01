@@ -41,7 +41,7 @@ titleWrapper.append("text")
 	.style("font-size", mobileScreen ? "12px" : "16px" )
 	.attr("x", (width/2 + margin.left - outerRadius - titleSeparate))
 	.attr("y", titleOffset)
-	.text("Thesen");
+	.text("Partein");
 titleWrapper.append("line")
 	.attr("class","titleLine left")
 	.attr("x1", (width/2 + margin.left - outerRadius - titleSeparate)*0.6)
@@ -54,7 +54,7 @@ titleWrapper.append("text")
 	.style("font-size", mobileScreen ? "12px" : "16px" )
 	.attr("x", (width/2 + margin.left + outerRadius + titleSeparate))
 	.attr("y", titleOffset)
-	.text("Parteien");
+	.text("Thesen");
 titleWrapper.append("line")
 	.attr("class","titleLine right")
 	.attr("x1", (width/2 + margin.left - outerRadius - titleSeparate)*0.6 + 2*(outerRadius + titleSeparate))
@@ -67,43 +67,43 @@ titleWrapper.append("line")
 ////////////////////////////////////////////////////////////
 
 var Names = [
-	"Die Finnen, FI","Schwedendemokraten, SE","UKIP, UK","AFD, DE","NPD, DE",
-	"Front National, F","FPÖ, AT","Lega Nord, IT","Goldene Morgenröte,GR",
-      "Recht und Gerechtigkeit, PL", "Jobbik, UN", "",
-	"Zionismus bekämpfen","Islamisierung bekämpfen","Migration beschränken",
-	"Christliche / abendländische Werte fördern", "Traditionelle Familienstrukturen fördern",
-	"Nationale Identität fördern", "Nationale Politik stärken / EU-Einfluss beschränken",
-	"EU-Austritt erwirken","US-Einfluss einschränken",""];
+	"US-Einfluss einschränken","EU-Austritt erwirken",
+	"Nationale Politik stärken / EU-Einfluss beschränken","Nationale Identität fördern",
+	"Traditionelle Familienstrukturen fördern","Christliche / abendländische Werte fördern",
+	"Migration beschränken","Islamisierung bekämpfen","Zionismus bekämpfen","",
+	"Jobbik, HU","Recht und Gerechtigkeit, PL","Goldene Morgenröte, GR",
+	"Lega Nord, IT","FPÖ, AT","Front National, FR",
+	"NPD, DE","AFD, DE","UK Independence Party, UK",
+	"Schwedendemokraten, SE","Die Finnen, FI",""];
 
 var respondents = 73, //Total number of respondents (i.e. the number that make up the total group)
 	emptyPerc = 0.6, //What % of the circle should become empty
 	emptyStroke = Math.round(respondents*emptyPerc);
 var matrix = [
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,0,1,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,1,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,0,1,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,emptyStroke],
-	[0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0],
-	[1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0],
-	[1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0],
-	[1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0],
-	[1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0],
-	[1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0],
-	[0,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],
-	[1,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,emptyStroke,0,0,0,0,0,0,0,0,0,0]
+[0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,1,0],
+[0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,1,0,0],
+[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0],
+[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0],
+[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0],
+[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,1,1,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0],
+[0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0],
+[0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,emptyStroke],
+[1,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[1,0,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[1,0,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,emptyStroke,0,0,0,0,0,0,0,0,0,0,0,0]
 
 ];
-
 
 //Calculate how far the Chord Diagram needs to be rotated clockwise to make the dummy
 //invisible chord center vertically
@@ -143,7 +143,7 @@ g.append("path")
 	.style("pointer-events", function(d,i) { return (Names[i] === "" ? "none" : "auto"); })
 	.attr("d", arc)
 	.attr("transform", function(d, i) { //Pull the two slices apart
-				d.pullOutSize = pullOutSize * ( d.startAngle + 0.001 > Math.PI ? -1 : 1);
+				d.pullOutSize = pullOutSize * ( d.startAngle + 0.1 > Math.PI ? -1 : 1);
 				return "translate(" + d.pullOutSize + ',' + 0 + ")";
 	});
 
