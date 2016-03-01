@@ -1,7 +1,11 @@
 #Right-wing parties in Europe
 
 This respository contains the code and data used for the *pflichtlektuere* project on right wing parteies in the EU member and applicant states.
-Read the articles here (Link coming soon).
+Read the articles here:
+
+[Pflichtlektüre - Karte: Die Rechten Europas](http://www.pflichtlektuere.com/04/02/2016/karte-die-rechten-europas/)
+
+[Pflichtlektüre - Thesentest: Rechte Parteien im Vergleich](http://www.pflichtlektuere.com/04/02/2016/thesentest-rechte-parteien-im-vergleich/)
 
 ##chord
 
